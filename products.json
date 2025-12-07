@@ -1,0 +1,162 @@
+[
+    {
+        "id": 1,
+        "nombre": "Smartphone Samsung Galaxy A54",
+        "categoria": "Tecnología",
+        "precio": 420,
+        "stock": 18,
+        "descripcion": "Teléfono inteligente con pantalla Super AMOLED de 6.4 pulgadas y cámara de 50MP."
+    },
+    {
+        "id": 2,
+        "nombre": "Auriculares Inalámbricos JBL Tune 510BT",
+        "categoria": "Audio",
+        "precio": 75,
+        "stock": 40,
+        "descripcion": "Auriculares Bluetooth con graves profundos y hasta 40 horas de batería."
+    },
+    {
+        "id": 3,
+        "nombre": "producto de prueba patch",
+        "categoria": "Fotografía",
+        "precio": 2031,
+        "stock": 2031,
+        "descripcion": "Cámara réflex con sensor de 24.1 MP y grabación Full HD."
+    },
+    {
+        "id": 4,
+        "nombre": "Notebook Lenovo IdeaPad 3",
+        "categoria": "Tecnología",
+        "precio": 720,
+        "stock": 9,
+        "descripcion": "Notebook con procesador Intel i5, 8GB RAM y SSD 256GB."
+    },
+    {
+        "id": 5,
+        "nombre": "Parlante Bluetooth Bose SoundLink",
+        "categoria": "Audio",
+        "precio": 180,
+        "stock": 15,
+        "descripcion": "Parlante portátil con sonido envolvente y resistencia al agua IPX4."
+    },
+    {
+        "id": 6,
+        "nombre": "Monitor LG UltraWide 29'",
+        "categoria": "Tecnología",
+        "precio": 330,
+        "stock": 7,
+        "descripcion": "Monitor panorámico ideal para multitarea y trabajo con múltiples ventanas."
+    },
+    {
+        "id": 7,
+        "nombre": "Teclado Mecánico Redragon Kumara",
+        "categoria": "Periféricos",
+        "precio": 55,
+        "stock": 32,
+        "descripcion": "Teclado mecánico retroiluminado con switches Outemu Blue."
+    },
+    {
+        "id": 8,
+        "nombre": "Mouse Gamer Logitech G502 Hero",
+        "categoria": "Periféricos",
+        "precio": 62,
+        "stock": 25,
+        "descripcion": "Mouse gamer con sensor HERO 25K y 11 botones programables."
+    },
+    {
+        "id": 9,
+        "nombre": "Smart TV LG 55' 4K UHD",
+        "categoria": "Electrodomésticos",
+        "precio": 780,
+        "stock": 6,
+        "descripcion": "Televisor 4K con inteligencia artificial ThinQ y HDR10."
+    },
+    {
+        "id": 10,
+        "nombre": "Cafetera Nespresso Essenza Mini",
+        "categoria": "Electrodomésticos",
+        "precio": 120,
+        "stock": 20,
+        "descripcion": "Cafetera compacta compatible con cápsulas Nespresso."
+    },
+    {
+        "id": 11,
+        "nombre": "Aspiradora Robot Xiaomi Mi Vacuum",
+        "categoria": "Electrodomésticos",
+        "precio": 350,
+        "stock": 8,
+        "descripcion": "Robot aspiradora con navegación inteligente y limpieza automática."
+    },
+    {
+        "id": 12,
+        "nombre": "Silla Gamer Corsair T3 Rush",
+        "categoria": "Muebles",
+        "precio": 310,
+        "stock": 10,
+        "descripcion": "Silla ergonómica reclinable con soporte lumbar ajustable."
+    },
+    {
+        "id": 13,
+        "nombre": "Reloj Inteligente Huawei Watch Fit",
+        "categoria": "Tecnología",
+        "precio": 95,
+        "stock": 28,
+        "descripcion": "Smartwatch con monitor cardíaco y modos deportivos avanzados."
+    },
+    {
+        "id": 14,
+        "nombre": "Tablet Samsung Galaxy Tab A8",
+        "categoria": "Tecnología",
+        "precio": 260,
+        "stock": 14,
+        "descripcion": "Tablet con pantalla de 10.5 pulgadas y altavoces Dolby Atmos."
+    },
+    {
+        "id": 15,
+        "nombre": "Disco SSD Kingston 1TB NV2",
+        "categoria": "Almacenamiento",
+        "precio": 80,
+        "stock": 50,
+        "descripcion": "SSD NVMe de alto rendimiento ideal para notebooks y PC de escritorio."
+    },
+    {
+        "id": 16,
+        "nombre": "Impresora Multifunción Epson EcoTank L3250",
+        "categoria": "Oficina",
+        "precio": 310,
+        "stock": 11,
+        "descripcion": "Impresora sin cartuchos con sistema de tanques recargables."
+    },
+    {
+        "id": 17,
+        "nombre": "Microondas Whirlpool 20L Digital",
+        "categoria": "Electrodomésticos",
+        "precio": 140,
+        "stock": 17,
+        "descripcion": "Microondas compacto con múltiples funciones automáticas."
+    },
+    {
+        "id": 18,
+        "nombre": "Ventilador de Pie Atma 20''",
+        "categoria": "Hogar",
+        "precio": 65,
+        "stock": 35,
+        "descripcion": "Ventilador con 3 velocidades y altura regulable."
+    },
+    {
+        "id": 19,
+        "nombre": "Licuadora Philips Daily Collection",
+        "categoria": "Electrodomésticos",
+        "precio": 75,
+        "stock": 22,
+        "descripcion": "Licuadora con cuchillas de acero inoxidable y jarra de vidrio."
+    },
+    {
+        "id": 20,
+        "nombre": "Plancha a Vapor Oster 1200W",
+        "categoria": "Hogar",
+        "precio": 50,
+        "stock": 30,
+        "descripcion": "Plancha con control de temperatura y sistema de vapor continuo."
+    }
+]

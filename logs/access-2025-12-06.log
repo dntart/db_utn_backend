@@ -1,0 +1,15 @@
+::ffff:127.0.0.1 POST /auth/login 200 197 - 100.578 ms
+::ffff:127.0.0.1 GET /products 200 3695 - 9.768 ms
+::ffff:127.0.0.1 GET /products 200 3695 - 12.696 ms
+::ffff:127.0.0.1 GET /products 200 3695 - 4.602 ms
+::ffff:127.0.0.1 GET /products 200 3695 - 4.120 ms
+::ffff:127.0.0.1 GET /products 200 3695 - 12.038 ms
+::ffff:127.0.0.1 GET /products 200 3695 - 5.955 ms
+::ffff:127.0.0.1 GET /products 200 3695 - 6.272 ms
+::ffff:127.0.0.1 GET /products 200 3695 - 14.148 ms
+::ffff:127.0.0.1 GET /products 200 3695 - 4.245 ms
+::ffff:127.0.0.1 GET /products 200 3695 - 4.815 ms
+::ffff:127.0.0.1 GET /products 200 3695 - 4.052 ms
+::ffff:127.0.0.1 GET /products 200 3695 - 4.059 ms
+::ffff:127.0.0.1 GET /products 401 29 - 1.396 ms
+::ffff:127.0.0.1 GET /products 401 29 - 1.240 ms
