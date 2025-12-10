@@ -20,7 +20,6 @@ static authRegister =  async (req: Request, res: Response): Promise<void | Respo
         }
         // crear un hash del password
         const hash = await bcrypt.hash(password, 10) //(parametro, salt o veces que va a encriptar x10 en este caso)
-
         //2da validacion escribiendo el caso de usuario repetido, pero hay una mejor forma
         // const user = await User.findOne({ email }) // 2 validacion si existe User model/sintaxis mongodb
         //if (user) {  return res.status(409).json({ mesagge: "Usuario ya existe en la base de dato" }) //error de dato repetido
