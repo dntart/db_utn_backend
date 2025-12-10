@@ -1,5 +1,5 @@
 //  importar herramientas y bibliotecas
-import express, { Response, Request, response } from "express"   // from marca la carpeta en module donde esta la herramienta "express" en este caso
+import express, { Response, Request, } from "express"   // from marca la carpeta en module donde esta la herramienta "express" en este caso
 import cors from "cors"  // antes lo instalamos "npm i cors" p poder vicular servicios de origen diferentes
 import connectDB from "./config/mongodb"
 import authMiddleware from "./middleware/authMiddleware"
@@ -84,7 +84,7 @@ app.use("/products", authMiddleware, productRouter) //las peticiones a product d
 //agregamos "authMiddleweare" y lo sacamos de c/u de las funciones porque era un psao repetido
 
 app.use("", (__: Request, res: Response) => { //el req no envia nada en params,body,headers,entonces lo reemplazamos por "__" 
-    response.status(404).json({ error: "El recurso no se encuentra" })
+    res.status(404).json({ error: "El recurso no se encuentra" })
 })   //validacion todas * las url no tipadas son incorrectas
 
 app.listen(PORT, () => {
