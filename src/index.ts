@@ -84,7 +84,7 @@ app.use("/products", authMiddleware, productRouter) //las peticiones a product d
 //agregamos "authMiddleweare" y lo sacamos de c/u de las funciones porque era un psao repetido
 
 app.use("", (__: Request, res: Response) => { //el req no envia nada en params,body,headers,entonces lo reemplazamos por "__" 
-    res.status(404).json({ error: "El recurso no se encuentra" })
+    res.status(404).json({succes: false, error:"ruta incorrecta" })
 })   //validacion todas * las url no tipadas son incorrectas
 
 app.listen(PORT, () => {
