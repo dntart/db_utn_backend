@@ -28,3 +28,5 @@
 ::ffff:127.0.0.1 PATCH /products/692c13bbcf2392c881f2e81e 400 62 - 13.767 ms
 ::ffff:127.0.0.1 PATCH /products/692c13bbcf2392c881f2e81e 400 49 - 3.685 ms
 ::ffff:127.0.0.1 PATCH /products/692c13bbcf2392c881f2e81e 200 158 - 11.687 ms
+::ffff:127.0.0.1 POST /auth/login 200 197 - 445.851 ms
+::ffff:127.0.0.1 GET /products/ 200 4138 - 34.399 ms
