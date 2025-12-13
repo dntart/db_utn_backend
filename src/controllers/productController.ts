@@ -10,7 +10,7 @@ class ProductController {
     static getAllProducts = async (req: Request, res: Response): Promise<void | Response> => { //reemplazamos CONST X STATIC de class
         try {
             const products = await Product.find() // Product con mayuscula es el model de mongoose
-            res.json({ succes: true, data: { products } }) //ESTANDARIZACION DE RESPUESTA{exito} /.find() es sintaxis de mongosh, como .findById
+            res.json({ succes: true, data:  products  }) //ESTANDARIZACION DE RESPUESTA{exito} /.find() es sintaxis de mongosh, como .findById
         } catch (e) {
             const error = e as Error
             res.status(500).json({ succes: false, error: error.message }) //ESTANDARIZACION DE RESPUESTA{no exito} 
