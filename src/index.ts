@@ -2,7 +2,7 @@
 import express, { Response, Request, } from "express"   // from marca la carpeta en module donde esta la herramienta "express" en este caso
 import cors from "cors"  // antes lo instalamos "npm i cors" p poder vicular servicios de origen diferentes
 import connectDB from "./config/mongodb"
-import authMiddleware from "./middleware/authMiddleware"
+//import authMiddleware from "./middleware/authMiddleware"
 import productRouter from "./routes/productRoutes"
 import authRouter from "./routes/authRoutes"
 import morgan from "morgan"  // instalamos con "npm i morgan" 
