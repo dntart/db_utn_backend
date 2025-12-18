@@ -9,8 +9,13 @@ class ProductController {
     // GET ALL - HOME   
     static getAllProducts = async (req: Request, res: Response): Promise<void | Response> => { //reemplazamos CONST X STATIC de class
         try {
-            const products = await Product.find() // Product con mayuscula es el model de mongoose
-            res.json({ succes: true, data:  products  }) //ESTANDARIZACION DE RESPUESTA{exito} /.find() es sintaxis de mongosh, como .findById
+
+            const params = req.query // query p aplicar filtros, parametro opcional ?
+            console.log(params)
+
+            const filter = {} //mongoose, find({})= es filtrar nada, pasa todo
+            const products = await Product.find(filter) // Product con mayuscula es el model de mongoose
+            res.json({ succes: true, data: products }) //ESTANDARIZACION DE RESPUESTA{exito} /.find() es sintaxis de mongosh, como .findById
         } catch (e) {
             const error = e as Error
             res.status(500).json({ succes: false, error: error.message }) //ESTANDARIZACION DE RESPUESTA{no exito} 
@@ -33,7 +38,7 @@ class ProductController {
 
         } catch (e) {
             const error = e as Error //typescripto toma e unknow debemos tiparlo
-            res.status(500).json({success:false, error: error.message }) //sino tipamos no podemos acceder a mensaje de error
+            res.status(500).json({ success: false, error: error.message }) //sino tipamos no podemos acceder a mensaje de error
         }
     }
     // POST
