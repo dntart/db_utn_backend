@@ -10,11 +10,25 @@ class ProductController {
     static getAllProducts = async (req: Request, res: Response): Promise<void | Response> => { //reemplazamos CONST X STATIC de class
         try {
 
-            const params = req.query // query p aplicar filtros, parametro opcional ?
-            console.log(params)
+            /* QUERY PARAMS - parametros opcionales que ayudan a filtrar los productos */
+            const queryParams = req.query // query p aplicar filtros, parametro opcional ?
+            console.log(queryParams)
 
-            const filter = {} //mongoose, find({})= es filtrar nada, pasa todo
-            const products = await Product.find(filter) // Product con mayuscula es el model de mongoose
+            const { name, description, stock, category, minPrice, maxPrice } = queryParams //destructuring
+            const filter: any = {} //mongoose, find({})= es filtrar nada, pasa todo
+
+            if (name) filter.name = new RegExp(String(name), "i") //1.si ha ?queryParams.name -2.=> creamos {name:}- 3.RegExp flexibiliza la busqueda para (debe ser string p no romper(objeto a buscar), i=insensitve)
+            if (description) filter.description = new RegExp(String(description), "i")
+            if (stock) filter.stock = Number(stock)
+            if (category) filter.category = new RegExp(String(category), "i")
+            if (minPrice || maxPrice) {
+                filter.price = {}            //crea products.find(price{})
+                if (minPrice) filter.price.$gte = minPrice // (price{$gte: ...})
+                if (maxPrice) filter.price.$lte = maxPrice // (price{$lte: ...})
+            }
+
+
+            const products = await Product.find(filter) // Product con mayuscula es el model de mongoose/filter={} ->TODOS
             res.json({ succes: true, data: products }) //ESTANDARIZACION DE RESPUESTA{exito} /.find() es sintaxis de mongosh, como .findById
         } catch (e) {
             const error = e as Error
