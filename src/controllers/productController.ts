@@ -24,7 +24,7 @@ class ProductController {
             if (minPrice || maxPrice) {
                 filter.price = {}            //crea products.find(price{})
                 if (minPrice) filter.price.$gte = minPrice // (price{$gte: ...})
-                if (maxPrice) filter.price.$lte = maxPrice // (price{$lte: ...})
+                if (maxPrice) filter.price.$lte = maxPrice // (price{$lte: ...  })
             }
 
 
