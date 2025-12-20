@@ -16,3 +16,7 @@
 ::1 GET /products? 304 - - 71.576 ms
 ::1 GET /products? 304 - - 67.466 ms
 ::1 GET /products?category=hogar 200 7269 - 94.067 ms
+::1 GET /products? 401 33 - 6.651 ms
+::1 GET /products? 401 33 - 1.694 ms
+::1 GET /products? 304 - - 90.541 ms
+::1 GET /products? 304 - - 83.690 ms

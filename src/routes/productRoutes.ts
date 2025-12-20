@@ -2,6 +2,7 @@
 import { Router } from "express";
 
 import productController from "../controllers/productController"; //importamos la CLASS que hace de contenedor de los controladores
+import authMiddleware from "../middleware/authMiddleware";
 
 
 
@@ -17,13 +18,14 @@ productRouter.get("/", productController.getAllProducts) //getAllProducts es un 
 productRouter.get("/:id", productController.getProduct) //el archivo "productController" contiene "getProduct"
 
 // POST
-productRouter.post("/", productController.addProduct)
+productRouter.post("/", authMiddleware,productController.addProduct)  //con autorizacion authMidleware
 
 // PATCH ( UPDATE actualiza recurso existente, PUT tambien pero crea si no existe asi que no es conveniente)
-productRouter.patch("/:id", productController.updateProduct)
+productRouter.patch("/:id", authMiddleware,productController.updateProduct) //con autorizacion authMidleware
 
 //DELETE 
-productRouter.delete("/:id", productController.deleteProduct)
+productRouter.delete("/:id", authMiddleware,productController.deleteProduct) //con autoriz
+// acion authMidleware
 
 
 
