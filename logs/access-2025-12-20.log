@@ -20,3 +20,6 @@
 ::1 GET /products? 401 33 - 1.694 ms
 ::1 GET /products? 304 - - 90.541 ms
 ::1 GET /products? 304 - - 83.690 ms
+::1 GET /products? 304 - - 22894.830 ms
+::1 GET /products? 200 9619 - 19329.158 ms
+::1 POST /auth/register 200 167 - 702.862 ms

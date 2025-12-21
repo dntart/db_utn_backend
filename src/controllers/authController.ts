@@ -29,7 +29,7 @@ static authRegister =  async (req: Request, res: Response): Promise<void | Respo
             password: hash
         })
         await newUser.save() //guardar en mongo, si sale bien el post de bruno da un id de mongodb //olvide las comillas y no me funcionaba nada, ojo!
-        res.json({succes: true, data: newUser})
+        res.status(201).json({succes: true, data: newUser})
     } catch (e) {
         const error = e as Error
         if (error.name === "MongoServerError") {  //2da validación "MongoServerError" es un mensaje estandar de mongodb que da cuando hay usuario repetido
