@@ -20,3 +20,7 @@
 ::1 POST /auth/register 409 67 - 89.227 ms
 ::1 POST /auth/register 409 67 - 68.631 ms
 ::1 POST /auth/register 201 170 - 227.237 ms
+::1 GET /products? 304 - - 76.380 ms
+::1 GET /products? 304 - - 76.649 ms
+::1 GET /products? 304 - - 87.811 ms
+::1 GET /products? 304 - - 78.665 ms
