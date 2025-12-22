@@ -111,8 +111,9 @@ class ProductController {
             const { id } = req.params    // RESTRUCTURING de: const id = req.params.id  //el parametro URL id
             const { body } = req // RESTRUCTURING de  const body = req.body  // el object enviado en el body
 
-            if (!Types.ObjectId.isValid(id)) res.status(400).json({ succes: false, error: "ID Inválido" }); //return omitido por tener 1 linea, Types.ObjectId analiza esto, .isValid es un operador true false que analiza si esta ok el id
-
+            if (!Types.ObjectId.isValid(id))         {
+                return res.status(400).json({ succes: false, error: "ID Inválido" }); //return omitido por tener 1 linea, Types.ObjectId analiza esto, .isValid es un operador true false que analiza si esta ok el id
+}
             const validator = updateProductSchema.safeParse(body)//ZOD compara el z.object en una de sus key con la qkey del(req.body)/su resultado da un obect { succes:bolean, data:{}}
             console.log(validator)
             if (!validator.success) {  //validator arroja {success:true/false, data:{ ..., ..., ...}}
