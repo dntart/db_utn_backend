@@ -114,7 +114,7 @@ class ProductController {
             if (!Types.ObjectId.isValid(id))         {
                 return res.status(400).json({ succes: false, error: "ID Inválido" }); //return omitido por tener 1 linea, Types.ObjectId analiza esto, .isValid es un operador true false que analiza si esta ok el id
 }
-            const validator = updateProductSchema.safeParse(body)//ZOD compara el z.object en una de sus key con la qkey del(req.body)/su resultado da un obect { succes:bolean, data:{}}
+            const validator = updateProductSchema.safeParse(body)//ZOD compara el z.object en una de sus key con la qkey del(req.body)/su resultado da un object { succes:bolean, data:{}}
             console.log(validator)
             if (!validator.success) {  //validator arroja {success:true/false, data:{ ..., ..., ...}}
                 return res.status(400).json(validator.error.flatten().fieldErrors) //.flaten() simplifica el msj error y .field()organiza el msj por campos

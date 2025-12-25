@@ -65,7 +65,7 @@ class AuthController {
             }
 
             //TOKEN/ 1.payload, info pública. 2.Clave secreta o firma. 3.opciones ej cuando expira
-            const token = jwt.sign({ id: user._id, email:user.email }, SECRET_KEY, { expiresIn: "1h" })
+            const token = jwt.sign({ id: user._id, email:user.email }, SECRET_KEY, { expiresIn: "1h" }) //para prueba añadimos email    
 
             res.json({ succes: true, token: token }) //caso exito que paso las validaciones y el correo del user existe
 
