@@ -12,6 +12,8 @@ import limiter from "./middleware/rateLimitMiddleware"
 //VARIABLES DE ENTORNO
 import dotenv from "dotenv" //importamos la herramienta de lectura de .env
 import IUserTokenPayload from "./interfaces/IUserTokenPayload"
+import transporter from "./config/emailConfig"
+//import { success } from "zod"
 dotenv.config() //ejecutamos la herramienta dotenv (esto se hace en c/archivo)
 
 
@@ -81,11 +83,35 @@ app.use(logger)  //crea carpeta logs con las request para analizar despues IMPOR
 app.use("/auth", limiter, authRouter) // AUTHLIMITER limites a la peticiones de registro y login
 
 //HABILITAMOS END POINTS - CRUD  //  authMiddleware, lo saque para probar una cosa
-app.use("/products",  productRouter) //las peticiones a product disparan el modulo PRODUCT ROUTER/quite el authMiddleware antes de productRouter para poder consumir la API sin pedidos de usuario
+app.use("/products", productRouter) //las peticiones a product disparan el modulo PRODUCT ROUTER/quite el authMiddleware antes de productRouter para poder consumir la API sin pedidos de usuario
 //agregamos "authMiddleweare" y lo sacamos de c/u de las funciones porque era un psao repetido
 
+// ENVIAR CORREO ELECTRONICO
+app.post("/email/send", async (req, res) => {
+    const { subject, email, message } = req.body
+    if (!subject || !email || !message) {  // 1ra validacion
+        return res.status(400).json({ success: false, message: "data inválida" })
+    }
+    res.json({ subject, email, message })
+
+    try {  //ENVIO DE EMAIL PROPIAMENTE DICHO
+        const info = await transporter.sendMail({
+            from: "tienda de Productos de Dante backend",
+            to: process.env.EMAIL_USER,
+            subject,  //??
+            html:
+                `<p>${message} <p/>`
+        }
+        )
+    } catch (e) {
+        const error = e as Error
+        res.status(500).json({ success: false, error: error.message })
+    }
+})
+
+//DIRECCION NO CONTEMPLADAS
 app.use("", (__: Request, res: Response) => { //el req no envia nada en params,body,headers,entonces lo reemplazamos por "__" 
-    res.status(404).json({succes: false, error:"ruta incorrecta" })
+    res.status(404).json({ succes: false, error: "ruta incorrecta" })
 })   //validacion todas * las url no tipadas son incorrectas
 
 app.listen(PORT, () => {
