@@ -14,6 +14,7 @@ import dotenv from "dotenv" //importamos la herramienta de lectura de .env
 import IUserTokenPayload from "./interfaces/IUserTokenPayload"
 import transporter from "./config/emailConfig"
 import createTemplates from "./templates/emailTemplates"
+import authMiddleware from "./middleware/authMiddleware"
 //import { success } from "zod"
 dotenv.config() //ejecutamos la herramienta dotenv (esto se hace en c/archivo)
 
@@ -84,7 +85,7 @@ app.use(logger)  //crea carpeta logs con las request para analizar despues IMPOR
 app.use("/auth", limiter, authRouter) // AUTHLIMITER limites a la peticiones de registro y login
 
 //HABILITAMOS END POINTS - CRUD  //  authMiddleware, lo saque para probar una cosa
-app.use("/products", productRouter) //las peticiones a product disparan el modulo PRODUCT ROUTER/quite el authMiddleware antes de productRouter para poder consumir la API sin pedidos de usuario
+app.use("/products", authMiddleware, productRouter) //las peticiones a product disparan el modulo PRODUCT ROUTER/quite el authMiddleware antes de productRouter para poder consumir la API sin pedidos de usuario
 //agregamos "authMiddleweare" y lo sacamos de c/u de las funciones porque era un psao repetido
 
 // ENVIAR CORREO ELECTRONICO
