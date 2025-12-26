@@ -13,6 +13,7 @@ import limiter from "./middleware/rateLimitMiddleware"
 import dotenv from "dotenv" //importamos la herramienta de lectura de .env
 import IUserTokenPayload from "./interfaces/IUserTokenPayload"
 import transporter from "./config/emailConfig"
+import createTemplates from "./templates/emailTemplates"
 //import { success } from "zod"
 dotenv.config() //ejecutamos la herramienta dotenv (esto se hace en c/archivo)
 
@@ -88,24 +89,25 @@ app.use("/products", productRouter) //las peticiones a product disparan el modul
 
 // ENVIAR CORREO ELECTRONICO
 app.post("/email/send", async (req, res) => {
-    const { subject, email, message } = req.body
-    if (!subject || !email || !message) {  // 1ra validacion
+    const { subject, email: emailUser, message } = req.body   // a la prop email: emailUser es el nombre p identificarla, xq hay 2 email
+    if (!subject || !emailUser || !message) {  // 1ra validacion
         return res.status(400).json({ success: false, message: "data inválida" })
     }
-    res.json({ subject, email, message })
 
     try {  //ENVIO DE EMAIL PROPIAMENTE DICHO
         const info = await transporter.sendMail({
-            from: "tienda de Productos de Dante backend",
+            from: `tienda de Productos de Dante backend ${emailUser}`,
             to: process.env.EMAIL_USER,
             subject,  //??
             html:
-                `<p>${message} <p/>`
+            createTemplates(message)  // ejecutamos emailTemplates.ts// antes  `<p>${message} <p/>`
         }
         )
+            res.json({ subject, emailUser, message })
+
     } catch (e) {
         const error = e as Error
-        res.status(500).json({ success: false, error: error.message })
+     return   res.status(500).json({ success: false, error: error.message })
     }
 })
 
